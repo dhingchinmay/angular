@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-12">
+    <h4>{{(recState | async).recipes[id].name}}</h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <img src="{{(recState | async).recipes[id].imgPath}}" alt="" style="width: auto; height: 320px; margin: 30px 20px;">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="btn-group" appDropdown>
+      <button class="btn btn-primary dropdown-toggle" type="button">Manage Recipe <span class="caret"></span></button>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a style="cursor: pointer;" (click) = "onAddToSList()">Add To Shopping List</a>
+
+        <div class="dropdown-divider"></div>
+        <a style="cursor: pointer;" [routerLink]= "['edit']">Edit Recipe</a>
+
+        <div class="dropdown-divider"></div>
+        <a style="cursor: pointer;" (click)="delrecipe()">Delete Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    {{(recState | async).recipes[id].description}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingred of (recState | async).recipes[id].ingredients">
+          {{ingred.name}} - {{ingred.amount}}
+      </li>
+    </ul>
+  </div>
+</div>

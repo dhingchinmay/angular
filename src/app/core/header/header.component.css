@@ -1,0 +1,19 @@
+nav{
+  height: 60px;
+  margin-bottom: 20px;
+}
+.dropdown-menu{
+  top: 40px;
+  left: 50px;
+  padding: 10px;
+  min-width: 13rem;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.open .dropdown-menu{
+  display: block;
+}
